@@ -1,0 +1,7 @@
+#radar {
+  background-color: purple;
+  border-radius: 5px;
+  padding: 20px;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
