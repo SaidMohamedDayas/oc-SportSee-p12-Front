@@ -5,7 +5,7 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Profile />} />
+      <Route path="/user/:id" element={<Profile />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
