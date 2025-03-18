@@ -14,7 +14,7 @@ import UserActivity from "../models/UserActivity";
 const API_URL = "http://localhost:3000";
 
 // Mode de l'application (development ou production)
-const mode = "development";
+const mode = "production";
 
 // Fonction pour récupérer les données utilisateur générales
 export async function fetchUserData(userId) {
