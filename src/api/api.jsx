@@ -1,10 +1,14 @@
 import axios from "axios";
+import User from "../models/User";
 import {
   USER_MAIN_DATA,
   USER_ACTIVITY,
   USER_AVERAGE_SESSIONS,
   USER_PERFORMANCE,
 } from "../mocks/mockData";
+import UserPerformance from "../models/UserPerformance";
+import UserSessions from "../models/UserSessions";
+import UserActivity from "../models/UserActivity";
 
 // URL de l'API
 const API_URL = "http://localhost:3000";
@@ -20,14 +24,13 @@ export async function fetchUserData(userId) {
       const userData = USER_MAIN_DATA.find(
         (user) => user.id === parseInt(userId)
       );
-      console.log("userData Development", userData);
 
-      return userData;
+      return new User(userData);
     }
-    const response = await axios.get(`${API_URL}/user/${userId}`);
-    console.log("userData API", response.data.data);
 
-    return response.data.data;
+    const response = await axios.get(`${API_URL}/user/${userId}`);
+
+    return new User(response.data.data);
   } catch (error) {
     console.error(
       "Erreur lors de la récupération des données utilisateur :",
@@ -46,15 +49,12 @@ export async function fetchUserActivity(userId) {
         (user) => user.userId === parseInt(userId)
       );
 
-      console.log("userActivity Development", userActivity);
-
-      return userActivity;
+      return new UserActivity(userActivity);
     }
 
     const response = await axios.get(`${API_URL}/user/${userId}/activity`);
-    console.log("userActivity API", response.data.data);
 
-    return response.data.data;
+    return new UserActivity(response.data.data);
   } catch (error) {
     console.error(
       "Erreur lors de la récupération des données d'activité :",
@@ -73,17 +73,14 @@ export async function fetchUserAverageSessions(userId) {
         (user) => user.userId === parseInt(userId)
       );
 
-      console.log("averageSessions Development", averageSessions);
-
-      return averageSessions;
+      return new UserSessions(averageSessions.sessions);
     }
 
     const response = await axios.get(
       `${API_URL}/user/${userId}/average-sessions`
     );
-    console.log("averageSessions API", response.data.data);
 
-    return response.data.data;
+    return new UserSessions(response.data.data.sessions);
   } catch (error) {
     console.error(
       "Erreur lors de la récupération des sessions moyennes :",
@@ -102,15 +99,20 @@ export async function fetchUserPerformance(userId) {
         (user) => user.userId === parseInt(userId)
       );
 
-      console.log("userPerformance Development", userPerformance);
+      // console.log(
+      //  "userPerformance Dev",
+      //  new UserPerformance(userPerformance.data)
+      // );
 
-      return userPerformance;
+      return new UserPerformance(userPerformance.data);
     }
 
     const response = await axios.get(`${API_URL}/user/${userId}/performance`);
-    console.log("userPerformance API", response.data.data);
 
-    return response.data.data;
+    // console.log("Performance Data:", response.data.data.data);
+
+    // Retourner une instance de UserPerformance
+    return new UserPerformance(response.data.data.data);
   } catch (error) {
     console.error("Erreur lors de la récupération des performances :", error);
     throw error;
@@ -140,9 +142,3 @@ export async function fetchUserKeyData(userId) {
     throw error;
   }
 }
-
-// test api
-fetchUserPerformance(12);
-fetchUserKeyData(12);
-fetchUserAverageSessions(12);
-fetchUserActivity(12);

@@ -1,0 +1,17 @@
+#sessions {
+  background-color: #ff0000;
+  border-radius: 5px;
+  padding: 0px;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+#sessions h4 {
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0px;
+  padding: 20px;
+  opacity: 0.5;
+  font-weight: 500;
+  line-height: 24px;
+}

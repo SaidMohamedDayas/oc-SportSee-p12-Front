@@ -2,31 +2,31 @@ const USER_MAIN_DATA = [
   {
     id: 12,
     userInfos: {
-      firstName: "User 12",
-      lastName: "Dovineau",
-      age: 31,
+      firstName: "Mock 12",
+      lastName: "Doe",
+      age: 30,
     },
-    todayScore: 0.12,
+    todayScore: 0.9,
     keyData: {
-      calorieCount: 1930,
-      proteinCount: 155,
-      carbohydrateCount: 290,
-      lipidCount: 50,
+      calorieCount: 2200,
+      proteinCount: 140,
+      carbohydrateCount: 320,
+      lipidCount: 80,
     },
   },
   {
     id: 18,
     userInfos: {
-      firstName: "User 18",
-      lastName: "Ratorez",
-      age: 34,
+      firstName: "Mock 18",
+      lastName: "Doe",
+      age: 35,
     },
-    score: 0.3,
+    score: 0.75,
     keyData: {
-      calorieCount: 2500,
-      proteinCount: 90,
-      carbohydrateCount: 150,
-      lipidCount: 120,
+      calorieCount: 1900,
+      proteinCount: 110,
+      carbohydrateCount: 210,
+      lipidCount: 95,
     },
   },
 ];
@@ -36,39 +36,39 @@ const USER_ACTIVITY = [
     userId: 12,
     sessions: [
       {
-        day: "2020-07-01",
+        day: "2021-08-01",
         kilogram: 80,
+        calories: 260,
+      },
+      {
+        day: "2021-08-02",
+        kilogram: 81,
         calories: 240,
       },
       {
-        day: "2020-07-02",
-        kilogram: 80,
-        calories: 220,
+        day: "2021-08-03",
+        kilogram: 82,
+        calories: 300,
       },
       {
-        day: "2020-07-03",
+        day: "2021-08-04",
+        kilogram: 83,
+        calories: 310,
+      },
+      {
+        day: "2021-08-05",
         kilogram: 81,
-        calories: 280,
+        calories: 180,
       },
       {
-        day: "2020-07-04",
-        kilogram: 81,
-        calories: 290,
+        day: "2021-08-06",
+        kilogram: 79,
+        calories: 190,
       },
       {
-        day: "2020-07-05",
-        kilogram: 80,
-        calories: 160,
-      },
-      {
-        day: "2020-07-06",
-        kilogram: 78,
-        calories: 162,
-      },
-      {
-        day: "2020-07-07",
-        kilogram: 76,
-        calories: 390,
+        day: "2021-08-07",
+        kilogram: 77,
+        calories: 410,
       },
     ],
   },
@@ -76,39 +76,39 @@ const USER_ACTIVITY = [
     userId: 18,
     sessions: [
       {
-        day: "2020-07-01",
+        day: "2021-08-01",
         kilogram: 70,
+        calories: 260,
+      },
+      {
+        day: "2021-08-02",
+        kilogram: 69,
         calories: 240,
       },
       {
-        day: "2020-07-02",
-        kilogram: 69,
-        calories: 220,
-      },
-      {
-        day: "2020-07-03",
+        day: "2021-08-03",
         kilogram: 70,
-        calories: 280,
+        calories: 300,
       },
       {
-        day: "2020-07-04",
+        day: "2021-08-04",
         kilogram: 70,
-        calories: 500,
+        calories: 520,
       },
       {
-        day: "2020-07-05",
+        day: "2021-08-05",
         kilogram: 69,
-        calories: 160,
+        calories: 180,
       },
       {
-        day: "2020-07-06",
+        day: "2021-08-06",
         kilogram: 69,
-        calories: 162,
+        calories: 190,
       },
       {
-        day: "2020-07-07",
+        day: "2021-08-07",
         kilogram: 69,
-        calories: 390,
+        calories: 410,
       },
     ],
   },
@@ -120,31 +120,31 @@ const USER_AVERAGE_SESSIONS = [
     sessions: [
       {
         day: 1,
-        sessionLength: 30,
+        sessionLength: 40,
       },
       {
         day: 2,
-        sessionLength: 23,
+        sessionLength: 30,
       },
       {
         day: 3,
-        sessionLength: 45,
+        sessionLength: 55,
       },
       {
         day: 4,
-        sessionLength: 50,
+        sessionLength: 60,
       },
       {
         day: 5,
-        sessionLength: 0,
+        sessionLength: 10,
       },
       {
         day: 6,
-        sessionLength: 0,
+        sessionLength: 10,
       },
       {
         day: 7,
-        sessionLength: 60,
+        sessionLength: 70,
       },
     ],
   },
@@ -153,31 +153,31 @@ const USER_AVERAGE_SESSIONS = [
     sessions: [
       {
         day: 1,
-        sessionLength: 30,
-      },
-      {
-        day: 2,
         sessionLength: 40,
       },
       {
-        day: 3,
+        day: 2,
         sessionLength: 50,
+      },
+      {
+        day: 3,
+        sessionLength: 60,
       },
       {
         day: 4,
-        sessionLength: 30,
+        sessionLength: 40,
       },
       {
         day: 5,
-        sessionLength: 30,
+        sessionLength: 40,
       },
       {
         day: 6,
-        sessionLength: 50,
+        sessionLength: 60,
       },
       {
         day: 7,
-        sessionLength: 50,
+        sessionLength: 60,
       },
     ],
   },
@@ -196,27 +196,27 @@ const USER_PERFORMANCE = [
     },
     data: [
       {
-        value: 80,
+        value: 90,
         kind: 1,
       },
       {
-        value: 120,
+        value: 80,
         kind: 2,
       },
       {
-        value: 140,
+        value: 90,
         kind: 3,
       },
       {
-        value: 50,
+        value: 30,
         kind: 4,
       },
       {
-        value: 200,
+        value: 70,
         kind: 5,
       },
       {
-        value: 90,
+        value: 10,
         kind: 6,
       },
     ],
@@ -233,27 +233,27 @@ const USER_PERFORMANCE = [
     },
     data: [
       {
-        value: 200,
+        value: 50,
         kind: 1,
       },
       {
-        value: 240,
+        value: 70,
         kind: 2,
       },
       {
-        value: 80,
+        value: 75,
         kind: 3,
       },
       {
-        value: 80,
+        value: 10,
         kind: 4,
       },
       {
-        value: 220,
+        value: 30,
         kind: 5,
       },
       {
-        value: 110,
+        value: 100,
         kind: 6,
       },
     ],

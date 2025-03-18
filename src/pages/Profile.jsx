@@ -5,6 +5,7 @@ import NavLeft from "../components/NavLeft";
 import Header from "../components/Header";
 import Dashboard from "../components/Dashboard/Dashboard";
 import { fetchUserData } from "../api/api";
+import NotFound from "./NotFound";
 
 function Profile() {
   const { id } = useParams(); // Récupère l'ID de l'utilisateur depuis l'URL
@@ -28,7 +29,7 @@ function Profile() {
   }, [id]);
 
   if (loading) return <p>Chargement des données...</p>;
-  if (error) return <p>Erreur : {error}</p>;
+  if (error) return <NotFound />;
 
   return (
     <div className="app-container">
@@ -37,7 +38,7 @@ function Profile() {
         <NavLeft />
         <main>
           {/* Passe le prénom de l'utilisateur au composant Header */}
-          <Header firstName={userData.userInfos.firstName} />
+          <Header firstName={userData.getFirstName()} />
           <Dashboard userData={userData} />
         </main>
       </div>

@@ -7,7 +7,7 @@ function Header({ firstName }) {
       <h1>
         Bonjour <span>{firstName}</span>
       </h1>
-      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+      <p>Félicitation ! Vous avez explosé vos sessions hier 👏</p>
     </header>
   );
 }

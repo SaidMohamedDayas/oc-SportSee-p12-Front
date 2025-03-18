@@ -1,0 +1,43 @@
+#glucides {
+  background-color: #FBFBFB;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 25%;
+}
+
+@media (min-width: 1025px) {
+  #glucides {
+    width: 80%;
+  }
+}
+
+.glucides-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.glucides-value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.glucides-value div {
+  font-size: 20px;
+  color: black;
+  font-weight: 700;
+}
+
+.glucides-title {
+  color: #74798C;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  margin: 0;
+}
