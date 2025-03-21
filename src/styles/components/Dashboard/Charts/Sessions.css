@@ -1,17 +1,27 @@
 #sessions {
   background-color: #ff0000;
   border-radius: 5px;
-  padding: 0px;
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  height: 300px;
+  position: relative;
+  padding: 0;
 }
 
-#sessions h4 {
-  color: #ffffff;
+.sessions-title {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 15px;
-  margin: 0px;
-  padding: 20px;
-  opacity: 0.5;
   font-weight: 500;
-  line-height: 24px;
+  z-index: 2;
+  line-height: 1.5;
+}
+
+.custom-tooltip {
+  background-color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: black;
+  border-radius: 5px;
 }
